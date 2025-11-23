@@ -1,0 +1,53 @@
+@use './../../../../public/styles/all_styles.scss' as all;
+
+// #region host
+:host {
+	@include all.fl($jc: space-between, $flexdir: column, $alit: center);
+	@include all.marpad($pad: 1rem 0);
+	grid-area: aside;
+	background: transparent;
+	box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+
+	@include all.tablet {
+		@include all.fl($jc: center, $alit: center);
+		@include all.marpad($pad: 0.5rem);
+	}
+
+	@include all.mobile {
+		@include all.size($w: 100dvw);
+		@include all.fl($jc: center, $alit: center);
+		@include all.marpad($pad: 0.5rem);
+	}
+
+	// #endregion
+
+	// #region nav-btn
+	nav {
+		width: 100%;
+		@include all.fl($flexdir: column, $alit: center, $jc: center);
+
+		@include all.tablet {
+			@include all.fl($gap: 1%, $jc: space-evenly);
+		}
+
+		button {
+			display: flex;
+			justify-content: flex-start;
+
+			@include all.tablet {
+				@include all.size($w: 10rem, $h: 5dvh);
+				@include all.fl($flexdir: column, $jc: center, $alit: center);
+			}
+
+			@include all.mobile {
+				@include all.size($w: 6rem, $h: 3rem);
+				border-radius: 0.5rem;
+			}
+
+			&:hover {
+				background: rgb(179, 178, 178);
+			}
+		}
+	}
+}
+// #endregion

@@ -1,0 +1,19 @@
+@use './../../../../public/styles/all_styles.scss' as all;
+
+:host {
+
+    .small-header {
+        @include all.size($w: 100%, $h: 25dvh);
+        grid-area: header;
+        background-image: url('./../../../../public/assets/img/GSBuch.png');
+        background-size: cover;
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        box-shadow: 0 4px 3px -3px rgba(0, 0, 0, 0.4);
+
+        @include all.tablet {
+            @include all.marpad($pad: 1.5rem);
+            @include all.size($w: 100dvw, $h: 10dvh);
+        }
+    }
+}

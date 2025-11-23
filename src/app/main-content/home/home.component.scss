@@ -1,0 +1,133 @@
+@use './../../../../public/styles/all_styles.scss' as all;
+@forward '../../../../public/styles/component-styles.scss';
+
+:host {
+	padding: 2rem;
+	height: 100%;
+
+	@include all.tablet {
+		overflow-y: auto;
+		@include all.scrollbar();
+		text-align: center;
+	}
+
+	h1 {
+		color: #857d7d;
+		margin-bottom: 3rem;
+		font-size: clamp(3.5rem, 2.5dvw, 5.4rem);
+		margin-right: 20rem;
+
+		@include all.tablet {
+			margin: 0;
+		}
+	}
+
+	h2 {
+		font-weight: 200;
+		font-size: clamp(2.5rem, 2.5dvw, 5.4rem);
+		margin-top: 2rem;
+	}
+
+	span {
+		font-weight: bold;
+	}
+
+	p {
+		margin-top: 3.5rem;
+	}
+
+	a {
+		color: #f58a33;
+
+		&:hover {
+			color: #857d7d;
+		}
+	}
+
+	img {
+		position: absolute;
+		height: auto;
+		width: clamp(8rem, 10dvw, 10rem);
+		top: 3dvh;
+		right: 5dvw;
+		filter: drop-shadow(2px 2px 16px orange);
+
+		&:hover {
+			scale: 1.1;
+		}
+
+		@include all.tablet {
+			display: none;
+		}
+	}
+
+	.btn-set {
+		position: absolute;
+		height: 4rem;
+		bottom: 0;
+		right: 10rem;
+
+		@include all.tablet {
+			position: relative;
+			bottom: auto;
+			right: auto;
+			margin: 5rem auto 0 auto;
+			display: block;
+			width: fit-content;
+		}
+	}
+
+	.dropdown {
+		@include all.absolute($bottom: 4.5rem, $right: 27rem);
+		@include all.marpad($pad: 1rem);
+		@include all.size($h: auto);
+		@include all.fl($jc: center, $alit: start, $flexdir: column, $gap: 0.5rem);
+		min-width: 14.5rem;
+		background-color: #fff;
+		border-radius: 1.6rem 1.6rem 0 1.6rem;
+		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+		z-index: 10;
+
+		@include all.tablet {
+			@include all.tablet {
+				@include all.size();
+				width: 90dvw;
+				max-width: 50rem;
+				position: absolute;
+				bottom: 12rem;
+				left: 50%;
+				top: auto;
+				right: auto;
+				transform: translateX(-50%);
+				border-radius: 1.6rem;
+			}
+		}
+	}
+
+	.dropdown table {
+		width: 100%;
+		border-collapse: collapse;
+		font-size: 1.6rem;
+		margin: 0;
+	}
+
+	.dropdown td {
+		padding: 8px 12px;
+		text-align: left;
+		border-bottom: 1px solid #eee;
+	}
+
+	.dropdown tbody tr:nth-child(odd) {
+		background-color: #f9f9f9;
+		color: #000000;
+	}
+
+	.dropdown tbody tr:nth-child(even) {
+		background-color: #fff;
+		color: #333;
+	}
+
+	.dropdown tbody tr:last-child td {
+		border-bottom: none;
+	}
+}

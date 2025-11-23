@@ -1,0 +1,71 @@
+<div class="p-8 bg-gray-100 min-h-screen">
+
+	<div class="grid-container">
+
+		<div class="div1 grid-item">
+			<h3 class="text-xl font-semibold mb-2">Fasching Hellau!</h3>
+			<img src="assets/img/hellau1.jpg" alt="">
+			<button (click)="openModal('div1')" class="btn-set">
+				Zeige mehr
+			</button>
+		</div>
+		<div class="div2 grid-item">
+			<div class="div1 grid-item">
+			<h3 class="text-xl font-semibold mb-2">Buchlesung " Die Schurken-Schnapp-AG"</h3>
+			<img src="assets/img/Buchlesung1.png" alt="">
+			<button (click)="openModal('div2')" class="btn-set">
+				Zeige mehr
+			</button>
+		</div>
+		</div>
+		<div class="div3 grid-item">Div 3 (R1/C3)</div>
+		<div class="div4 grid-item">Div 4 (R1/C4)</div>
+		<div class="div14 grid-item hidden lg:block">Div 14 (R1/C5)</div>
+
+
+		<div class="div5 grid-item">Div 5 (R2/C1)</div>
+		<div class="div6 grid-item">Div 6 (R2/C2)</div>
+		<div class="div7 grid-item">Div 7 (R2/C3)</div>
+		<div class="div8 grid-item">Div 8 (R2/C4)</div>
+		<div class="div15 grid-item hidden lg:block">Div 15 (R2/C5)</div>
+
+		<div class="div9 grid-item">Div 9 (R3/C1)</div>
+		<div class="div10 grid-item">Div 10 (R3/C2)</div>
+		<div class="div11 grid-item">Div 11 (R3/C3)</div>
+		<div class="div12 grid-item">Div 12 (R3/C4)</div>
+		<div class="div16 grid-item hidden lg:block">Div 16 (R3/C5)</div>
+	</div>
+
+	@if (isOpen()) {
+    <div class="modal-overlay" (click)="closeModal()">
+        
+        <dialog class="dialog" (click)="$event.stopPropagation()" open>
+            
+            <button class="close" (click)="closeModal()">X</button>
+
+            @switch (contentKind()) {
+
+                @case ('div1') {
+                    <header class="contact-modal-header border-b pb-4 mb-6 flex items-center space-x-4">
+                        <h3 class="text-xl font-semibold mb-2">Fasching Hellau!</h3>
+                        <img src="assets/img/hellau1.jpg" alt="Fasching Bild">
+                        <p>Hier sind die spezifischen Inhalte, die nur im Modal für Div 1 erscheinen sollen.</p>
+                    </header>
+                }
+
+                @case ('div2') {
+                    <header>
+                        <h3 class="text-xl font-semibold mb-2">Buchlesung " Die Schurken-Schnapp-AG"</h3>
+						<img src="assets/img/Buchlesung1.png" alt="Fasching Bild">
+                        <p>Dieser Dialog zeigt den Inhalt des zweiten Grid-Elements.</p>
+                        </header>
+                }
+
+                @default {
+                    <p>Modalinhaltstyp konnte nicht zugeordnet werden.</p>
+                }
+            }
+        </dialog>
+	</div>
+	}
+</div>

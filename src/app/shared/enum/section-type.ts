@@ -1,0 +1,16 @@
+export enum SectionType {
+    HOME = 'home',
+    ACTUAL = 'actual',
+    ALLDAY = 'allday',
+    TERMIN = 'termin',
+    FORMULAR = 'formular',
+    SCHOOLSTART = 'schoolstart',
+    DAYOFFER = 'dayoffer',
+    ROUND = 'round',
+    EMPLOY = 'employ',
+    SCHOOLBOOK = 'schoolbook',
+    CLASSTWO = 'classtwo',
+    TOGETHERLIVE = 'togetherlive',
+    DRIVE = 'drive',
+    PREV_SECTION = 'prev-section',
+}

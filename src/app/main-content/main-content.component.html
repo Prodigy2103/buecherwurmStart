@@ -1,0 +1,20 @@
+<div class="content"> <!-- display: grid -->
+    <app-aside [currentSection]="currentSection" (selectedSection)="changeSection($event)"></app-aside>
+    <header app-header></header>
+
+    <main>
+        @switch (currentSection) {
+
+            @case (SectionType.HOME) {
+                <section home></section>
+            }
+
+            @case (SectionType.ACTUAL) {
+                <section actual></section>
+            }
+
+            <!-- ... (andere Abschnitte) ... -->
+
+        }
+    </main>
+</div>

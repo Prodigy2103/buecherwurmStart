@@ -35,7 +35,7 @@ a {
 .content {
     display: grid;
     grid-template-columns: 20rem auto;
-    grid-template-rows: 25dvh 75dvh;
+    grid-template-rows: 10dvh 90dvh;
     grid-template-areas: "header header" "aside main";
     height: 100dvh;
 
@@ -65,5 +65,4 @@ h2 {
 h3 {
     font-size: 1.8rem;
 }
-
 
